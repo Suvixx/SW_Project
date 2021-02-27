@@ -23,3 +23,6 @@ We wrote the entire code using R programming language. The Packages we used are 
 * At the console type: <if(interactive()) fun()>
 * Put your temperature
 * **#HAVE FUN DRESSING**
+
+**Testing**
+After running the above work-flow a trained and tuned SVM model will be generated. To test that "test_script.R" can be run. This script generate random temperature data with proper class label and help to test the SVM model.
