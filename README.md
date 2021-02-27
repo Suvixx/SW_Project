@@ -1,7 +1,7 @@
 # SW_Project
 This repository will have all the files related to the WASP AS software engineering project.
 
-The aim of this project is to build a recommendation system which will recommend a set of clothes to wear accoridng to the outside temperature.
+The aim of this project is to build a recommendation system which will recommend a set of clothes to wear accoridng to the outside temperature. We took our knowledge to build data for both the training and testing purpose from [here](https://activeforlife.com/how-to-dress-for-the-weather-in-every-season/).
 
 This is a simple multi-class classification task where the features is temperature and the class label is dress_class. We divided the temperatures into five different classes. They are following:
 * Class 0 <- Shorts, Half Sleeves T-shirt, Hat, Shoes (Temperature group = >= 20 degree celsius)
