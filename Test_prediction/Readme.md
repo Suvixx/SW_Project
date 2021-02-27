@@ -1,0 +1,1 @@
+This folder contains two set of test results. "result1.csv" represents our first approach and "result2.csv" represents the elevated tuned model approach. We tuned two hyperparameters of SVM, namely cost(=10) and gamma(=0.5). 
