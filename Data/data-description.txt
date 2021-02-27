@@ -1,0 +1,6 @@
+Class description
+Class 0 <- Shorts, Half Sleeves T-shirt, Hat, Shoes (Temperature group = >= 20)
+Class 1 <- Trouser, Sweater, Socks, Cap, Shoes (Temperature Group = 10-19)
+Class 2 <- Trouser, Sweater, Socks, Woolen Cap, Shoes, Wind-Cheater, Gloves (Temperature group = 0-9)
+Class 3 <- Trouser, Sweater, Socks, Woolen Cap, Snow-Boots, Jacket, Gloves, Neck-cover, Winter-Pants (Temperature group = -10-1)
+Class 4 <- Trouser, Sweater, Socks, Woolen Cap, Snow-Boots, Jacket, Gloves, Neck-cover, Winter-Pants, Muffler, Balaclava-helmet (Temperature group = <=-11)
