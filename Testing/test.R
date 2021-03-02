@@ -35,6 +35,7 @@ pred_prob <- predict(model_dc1, test_data$Temperature, decision.values = TRUE, p
 
 #unit test to see whether the model is in "svm" class or not
 expect_that(model_dc1, is_a("lm"))
+expect_that(model_dc1, is_a("svm"))
 
 result <- attr(pred_prob, "probabilities")
 result_df <- as.data.frame(result)
@@ -55,6 +56,11 @@ svm_model_after_tune <- svm(train_data$Temperature,y, cost=100, gamma=0.5, proba
 summary(svm_model_after_tune)
 
 pred <- predict(svm_model_after_tune, test_data$Temperature, decision.values = TRUE, probability = TRUE)
+
+#unit test to see whether the model is in "svm" class or not
+expect_that(svm_model_after_tune, is_a("lm"))
+#expect_that(svm_model_after_tune, is_a("svm"))
+
 
 confusionMatrix(y_test, pred)
 
