@@ -16,9 +16,11 @@ test_data <- data[-train_index,]
 #unit test of training testing split. 
 #You can see that only when the value of k=0.7 there will be no error message
 k <- 0.7
-j <- expect_that(size, equals(floor(k[i]*(nrow(data)))))
+j <- expect_that(size, equals(floor(k*(nrow(data)))))
 k <- 0.8
-j <- expect_that(size, equals(floor(k[i]*(nrow(data)))))
+j <- expect_that(size, equals(floor(k*(nrow(data)))))
+k <- 0.9
+j <- expect_that(size, equals(floor(k*(nrow(data)))))
 
 
 
