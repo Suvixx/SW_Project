@@ -32,6 +32,10 @@ y_test <- as.factor(test_data$Dress_Class)
 library(e1071)
 model_dc1 <- svm(train_data$Temperature, y, probability = TRUE)
 pred_prob <- predict(model_dc1, test_data$Temperature, decision.values = TRUE, probability = TRUE)
+
+#unit test to see whether the model is in "svm" class or not
+expect_that(model_dc1, is_a("lm"))
+
 result <- attr(pred_prob, "probabilities")
 result_df <- as.data.frame(result)
 write.csv(result_df, "~/Desktop/wasp/result1.csv", sep = ",")
