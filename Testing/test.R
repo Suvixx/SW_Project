@@ -35,7 +35,6 @@ pred_prob <- predict(model_dc1, test_data$Temperature, decision.values = TRUE, p
 
 #unit test to see whether the model is in "svm" class or not
 expect_that(model_dc1, is_a("lm"))
-expect_that(model_dc1, is_a("svm"))
 
 result <- attr(pred_prob, "probabilities")
 result_df <- as.data.frame(result)
