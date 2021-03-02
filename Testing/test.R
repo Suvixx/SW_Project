@@ -17,7 +17,8 @@ test_data <- data[-train_index,]
 #You can see that only when the value of k=0.7 there will be no error message
 k <- 0.7
 j <- expect_that(size, equals(floor(k[i]*(nrow(data)))))
-
+k <- 0.8
+j <- expect_that(size, equals(floor(k[i]*(nrow(data)))))
 
 
 
