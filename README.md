@@ -16,7 +16,7 @@ We wrote the entire code using R programming language. The Packages we used are 
 * utils (for reading and writing different files. Generally one do not need to call this library explicitly. It comes automatically into action when one initiated a .R file)
 
 
-**Work-Flow**
+##**Work-Flow**
 * First download and install [Rstudio](https://rstudio-education.github.io/hopr/starting.html).
 * clone the [SW_Project repository](https://github.com/Suvixx/SW_Project).
 * Run the file [main_fun 2.R](https://github.com/Suvixx/SW_Project/blob/main/main_fun%202.R).
@@ -24,6 +24,8 @@ We wrote the entire code using R programming language. The Packages we used are 
 * Put your temperature
 * **#HAVE FUN DRESSING**
 
-**Testing**
-
-After running the above work-flow a trained and tuned SVM model will be generated. To test that "test_script.R" can be run. This script generate random temperature data with proper class label and help to test the SVM model.
+##**Testing**
+We planned the testing of our system in three ways. They are following:
+* Machine Learning testing: This part is solely for the testing of the prediction of dress classes against the test data. The results have been uploaded in the ["Test_prediction" folder](https://github.com/Suvixx/SW_Project/tree/main/Test_prediction).
+* Unit test: We checked every part of the program using the "Test.R" script. The results are being uploaded [here](https://github.com/Suvixx/SW_Project/tree/main/Testing/unit_test_result).
+* Integration test: After running the above work-flow a trained and tuned SVM model will be generated. To test that "test_script.R" can be run. This script generate random temperature data with proper class label and help to test the SVM model. We uploaded one dataset and result in this [folder](https://github.com/Suvixx/SW_Project/tree/main/Testing/integration_test).
