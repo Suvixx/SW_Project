@@ -14,6 +14,7 @@ We wrote the entire code using R programming language. The Packages we used are 
 * e1071 (for implementing SVM classifier)
 * caret (for calculating accuracy and model statistics)
 * utils (for reading and writing different files. Generally one do not need to call this library explicitly. It comes automatically into action when one initiated a .R file)
+* testthat (for the purpose of unit testing our system)
 
 
 ## **Work-Flow**
