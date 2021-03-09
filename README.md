@@ -27,6 +27,6 @@ We wrote the entire code using R programming language. The Packages we used are 
 
 ## **Testing**
 We planned the testing of our system in three ways. They are following:
-* **Machine Learning testing:** This part is solely for the testing of the prediction of dress classes against the test data. The results have been uploaded in the ["Test_prediction" folder](https://github.com/Suvixx/SW_Project/tree/main/Test_prediction).
-* **Unit test:** We checked every part of the program using the "Test.R" script. The results are being uploaded [here](https://github.com/Suvixx/SW_Project/tree/main/Testing/unit_test_result).
+* **Machine Learning testing:** This part is solely for the testing of the prediction of dress classes against the test data. We did two tests here. The results have been uploaded in the ["Test_prediction" folder](https://github.com/Suvixx/SW_Project/tree/main/Test_prediction).
+* **Unit test:** We checked every part of the program using the "Test.R" script. There are total four test cases. The results are being uploaded [here](https://github.com/Suvixx/SW_Project/tree/main/Testing/unit_test_result).
 * **Integration test:** After running the above work-flow a trained and tuned SVM model will be generated. To test that "test_script.R" can be run. This script generate random temperature data with proper class label and help to test the SVM model. We uploaded four datasets and respective result screenshot in this [folder](https://github.com/Suvixx/SW_Project/tree/main/Testing/integration_test).
