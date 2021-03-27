@@ -34,7 +34,26 @@ write.csv(result_df, "~/Desktop/wasp/result1.csv", sep = ",")
 pred_prob_n <- predict(model_dc1, test_data$Temperature, decision.values = FALSE, probability = FALSE)
 pred_prob_n <- as.data.frame(pred_prob_n)
 pred_prob_n <- as.factor(pred_prob_n)
-View(pred_prob_n)
+#View(pred_prob_n)
+
+#Refactoring by introducing abstraction through writing function for confusionmatrix
+#confusion matrix function
+confusion = function(pred_prob,y_test){
+conf <- matrix(data = rep(0,25), nrow = 5, ncol = 5)
+rownames(conf) <- c(0,1,2,3,4)
+colnames(conf) <- c(0,1,2,3,4)
+for(i in 1:nrow(pred_prob))
+{
+  if(identical(pred_prob[i,1], y_test[i,1]) == TRUE)
+  {conf[pred_prob[i,1],pred_prob[i,1]] <- conf[pred_prob[i,1],pred_prob[i,1]] + 1}
+  else
+    conf[pred_prob[i,1],y_test[i,1]] <- conf[pred_prob[i,1],y_test[i,1]] + 1
+}
+return(conf)
+}
+confusion_matrix <- confusion(pred_prob = pred_prob, y_test = y_test)
+
+
 
 library(caret)
 confusionMatrix(y_test, pred_prob)
