@@ -13,6 +13,7 @@ y <- as.factor(train_data$Dress_Class)
 y_test <- as.factor(test_data$Dress_Class)
 
 #multi-class svm classification
+# Refactoring type: Replace code with library use (by using library e1071)
 library(e1071)
 model_dc1 <- svm(train_data$Temperature, y, probability = TRUE)
 pred_prob <- predict(model_dc1, test_data$Temperature, decision.values = TRUE, probability = TRUE)
@@ -23,6 +24,7 @@ pred_prob_n <- predict(model_dc1, test_data$Temperature, decision.values = FALSE
 pred_prob_n <- as.data.frame(pred_prob_n)
 pred_prob_n <- as.factor(pred_prob_n)
 View(pred_prob_n)
+
 
 library(caret)
 confusionMatrix(y_test, pred_prob)
