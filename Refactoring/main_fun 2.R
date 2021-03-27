@@ -2,6 +2,18 @@
 data <- read.csv("D:/PhD/wasp-sw/sw.csv", sep = ",")
 
 #training and testing split
+#Introduce abstraction by writing a function for the split
+split = function(k,data){
+  size <- floor(k*(nrow(data)))
+  set.seed(123)
+  train_index <- (sample(seq_len(nrow(data)), size = size))
+  return(train_index)}
+
+index <- split(0.8,data)
+train_data <- data[index,]
+test_data <- data[-index,]
+
+
 size <- floor(0.7*(nrow(data)))
 set.seed(123)
 train_index <- (sample(seq_len(nrow(data)), size = size))
