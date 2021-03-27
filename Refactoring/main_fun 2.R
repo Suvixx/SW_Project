@@ -32,6 +32,7 @@ confusionMatrix(y_test, pred_prob)
 svm_tune <- tune(svm, train.x=train_data$Temperature, train.y=y, 
                  kernel="radial", ranges=list(cost=10^(-1:3), gamma=c(.5,1,2,3)))
 
+#substitute algorithm
 svm_model_after_tune <- svm(train_data$Temperature,y, cost=100, gamma=0.5, probability = TRUE)
 summary(svm_model_after_tune)
 
