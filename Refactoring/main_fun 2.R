@@ -2,6 +2,18 @@
 data <- read.csv("D:/PhD/wasp-sw/sw.csv", sep = ",")
 
 #training and testing split
+#Introduce abstraction by writing a function for the split
+split = function(k,data){
+  size <- floor(k*(nrow(data)))
+  set.seed(123)
+  train_index <- (sample(seq_len(nrow(data)), size = size))
+  return(train_index)}
+
+index <- split(0.8,data)
+train_data <- data[index,]
+test_data <- data[-index,]
+
+
 size <- floor(0.7*(nrow(data)))
 set.seed(123)
 train_index <- (sample(seq_len(nrow(data)), size = size))
@@ -46,8 +58,17 @@ confusionMatrix(y_test, pred)
 fun <- function() {
   Temp <- readline("Enter a temperature: ")
   Temp <- as.integer(Temp)
-  predt <- predict(svm_model_after_tune, Temp, decision.values = FALSE, probability = FALSE)
-  cat(as.integer(predt[[1]]) - 1)
+  #Introduce assertion
+  if(Temp >= -30 ){
+    if(Temp <= 30){
+      predt <- predict(svm_model_after_tune, Temp, decision.values = FALSE, probability = FALSE)
+      cat(as.integer(predt[[1]]) - 1)
+    }
+    else
+      print("Not in the range")
+  }
+  else
+    print("Not in the range")
 }
 
 if(interactive()) fun()
