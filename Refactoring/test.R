@@ -1,6 +1,6 @@
 #test library load
 library(testthat)
-
+#Refactoring Type: "Replace code with library use" (by using library testhat)
 #data loading
 data <- read.csv("D:/PhD/wasp-sw/sw.csv", sep = ",")
 

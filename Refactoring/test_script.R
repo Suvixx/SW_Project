@@ -2,6 +2,8 @@
 temperature <- data.frame(temp = floor(runif(300, min=-30, max=30)))
 #corresponding label generation
 dress_class <- data.frame(dress_class = rep(0,nrow(temperature)))
+
+#Refactoring type: Consolidate Conditional Expressions
 for(i in 1:nrow(temperature))
 {
   if(temperature[i,1]>=20)

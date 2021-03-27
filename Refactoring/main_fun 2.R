@@ -25,13 +25,15 @@ y <- as.factor(train_data$Dress_Class)
 y_test <- as.factor(test_data$Dress_Class)
 
 #multi-class svm classification
+# Refactoring type: Replace code with library use (by using library e1071)
 library(e1071)
-model_dc1 <- svm(train_data$Temperature, y, probability = TRUE)
-pred_prob <- predict(model_dc1, test_data$Temperature, decision.values = TRUE, probability = TRUE)
+# Refactoring type: Rename variable (by changing model_dc1 to svm_untuned)
+svm_untuned <- svm(train_data$Temperature, y, probability = TRUE)
+pred_prob <- predict(svm_untuned, test_data$Temperature, decision.values = TRUE, probability = TRUE)
 result <- attr(pred_prob, "probabilities")
 result_df <- as.data.frame(result)
 write.csv(result_df, "~/Desktop/wasp/result1.csv", sep = ",")
-pred_prob_n <- predict(model_dc1, test_data$Temperature, decision.values = FALSE, probability = FALSE)
+pred_prob_n <- predict(svm_untuned, test_data$Temperature, decision.values = FALSE, probability = FALSE)
 pred_prob_n <- as.data.frame(pred_prob_n)
 pred_prob_n <- as.factor(pred_prob_n)
 #View(pred_prob_n)
@@ -52,6 +54,7 @@ for(i in 1:nrow(pred_prob))
 return(conf)
 }
 confusion_matrix <- confusion(pred_prob = pred_prob, y_test = y_test)
+
 
 
 
