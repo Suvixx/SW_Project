@@ -57,7 +57,7 @@ confusion_matrix <- confusion(pred_prob = pred_prob, y_test = y_test)
 
 
 
-
+# Refactoring type: Replace code with library use (replaced function confusion with the built-in function from library(caret)) 
 library(caret)
 confusionMatrix(y_test, pred_prob)
 
