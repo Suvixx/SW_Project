@@ -28,6 +28,7 @@ library(caret)
 confusionMatrix(y_test, pred_prob)
 
 #tune for better accuracy <0.9833
+#refactoring the svm model for extracting (magic) constant, literal
 svm_tune <- tune(svm, train.x=train_data$Temperature, train.y=y, 
                  kernel="radial", ranges=list(cost=10^(-1:3), gamma=c(.5,1,2,3)))
 
