@@ -61,7 +61,15 @@ pred <- predict(svm_model_after_tune, test_data$Temperature, decision.values = T
 expect_that(svm_model_after_tune, is_a("lm"))
 expect_that(svm_model_after_tune, is_a("svm"))
 
+#Function for unit testing
+# Refactoring type: Replace commands with function (wrote a function for unit testing)
+utest_model <- function(model){
+   	type <- c("lm", "svm")
+	for(i in 1:length(type))
+            print(expect_that(model, is_a(type[I])))
+}
 
+utest_model(model = model_dc1)
 confusionMatrix(y_test, pred)
 
 
