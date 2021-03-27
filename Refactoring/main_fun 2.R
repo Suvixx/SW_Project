@@ -39,11 +39,12 @@ pred <- predict(svm_model_after_tune, test_data$Temperature, decision.values = T
 
 confusionMatrix(y_test, pred)
 
-
+#Combine functions into transform
 fun <- function() {
   Temp <- readline("Enter a temperature: ")
   Temp <- as.integer(Temp)
   predt <- predict(svm_model_after_tune, Temp, decision.values = FALSE, probability = FALSE)
   cat(as.integer(predt[[1]]) - 1)
 }
-#if(interactive()) fun()
+
+if(interactive()) fun()
