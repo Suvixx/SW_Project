@@ -11,18 +11,6 @@ index <- split(0.8,data)
 train_data <- data[index,]
 test_data <- data[-index,]
 
-#unit testing split function
-library(testthat)
-
-split_value <- c(0.6,0.7,0.8,0.2765)
-unit_test_split = function(split_value){
-  for(i in 1:length(split_value)){
-    j <- expect_that(index, equals(split(split_value[i],data)))
-    print(j)
-  }
-}
-
-
 #factoring
 y <- as.factor(train_data$Dress_Class)
 y_test <- as.factor(test_data$Dress_Class)
@@ -32,6 +20,10 @@ library(e1071)
 svm_untuned <- svm(train_data$Temperature, y, probability = TRUE)
 pred_prob <- predict(svm_untuned, test_data$Temperature, decision.values
 = TRUE, probability = TRUE)
+
+#unit test to see whether the model is in "svm" class or not
+expect_that(svm_untuned, is_a("lm"))
+expect_that(svm_untuned, is_a("svm"))
 
 
 library(caret)
