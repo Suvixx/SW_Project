@@ -31,7 +31,7 @@ unit_test_model <- function(model){
 	for(i in 1:length(type))
              print(expect_that(model, is_a(type[I])))
 }
-unit_test_model(model = svm_untuned)
+unit_test_model(model = svm_tuned)
 
 library(caret)
 confusionMatrix(y_test, pred_prob)
