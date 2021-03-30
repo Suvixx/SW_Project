@@ -43,7 +43,7 @@ fun <- function() {
     #Introduce assertion
    if(Temp >= -30 ){
      if(Temp <= 30){
-       predt <- predict(svm_tuned, Temp, decision.values =
+       prediction  <- predict(svm_tuned, Temp, decision.values =
 FALSE, probability = FALSE)
        cat(as.integer(predt[[1]]) - 1)
      }
