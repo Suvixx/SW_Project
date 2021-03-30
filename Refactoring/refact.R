@@ -22,8 +22,7 @@ pred_prob <- predict(svm_untuned, test_data$Temperature, decision.values
 = TRUE, probability = TRUE)
 
 #unit test to see whether the model is in "svm" class or not
-#expect_that(svm_untuned, is_a("lm"))
-#expect_that(svm_untuned, is_a("svm"))
+
 
 # Refactoring type: Replace commands with function (wrote a function for
 unit testing)
