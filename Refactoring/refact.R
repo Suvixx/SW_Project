@@ -59,28 +59,84 @@ if(interactive()) fun()
 
 
 #random test data generation
-temperature <- data.frame(temp = floor(runif(300, min=-30, max=30)))
+#temperature <- data.frame(temp = floor(runif(300, min=-30, max=30)))
 #corresponding label generation
-dress_class <- data.frame(dress_class = rep(0,nrow(temperature)))
+#dress_class <- data.frame(dress_class = rep(0,nrow(temperature)))
 
-for(i in 1:nrow(temperature))
-{
-  if(temperature[i,1]>=20)
-    dress_class[i,1] = 0
-  if(temperature[i,1] <=19 && temperature[i,1] >= 10)
-    dress_class[i,1] = 1
-  if(temperature[i,1] >=0 && temperature[i,1] <= 9)
-    dress_class[i,1] = 2
-  if(temperature[i,1] >=-10 && temperature[i,1] <= -1)
-    dress_class[i,1] = 3
-  if(temperature[i,1]<=-11)
-    dress_class[i,1] = 4
-}
+#for(i in 1:nrow(temperature))
+#{
+#  if(temperature[i,1]>=20)
+#    dress_class[i,1] = 0
+#  if(temperature[i,1] <=19 && temperature[i,1] >= 10)
+#    dress_class[i,1] = 1
+#  if(temperature[i,1] >=0 && temperature[i,1] <= 9)
+#    dress_class[i,1] = 2
+#  if(temperature[i,1] >=-10 && temperature[i,1] <= -1)
+#    dress_class[i,1] = 3
+#  if(temperature[i,1]<=-11)
+#    dress_class[i,1] = 4
+#}
 
-dress_class <- as.factor(dress_class$dress_class)
+
+#dress_class <- as.factor(dress_class$dress_class)
 
 #integration test
-predicted_test_labels <- predict(svm_model_after_tune, temperature, decision.values =
-TRUE, probability = TRUE)
-library(caret)
-confusionMatrix(dress_class, predicted_test_labels)
+#predicted_test_labels <- predict(svm_model_after_tune, temperature, decision.values =
+#TRUE, probability = TRUE)
+#library(caret)
+#confusionMatrix(dress_class, predicted_test_labels)
+
+
+#random test data generation
+test_data_generation = function(k){
+
+   temperature <- data.frame(temp = floor(runif(k, min=-30, max=30)))
+   #corresponding label generation
+   dress_class <- data.frame(dress_class = rep(0,nrow(temperature)))
+
+   for(i in 1:nrow(temperature))
+   {
+     if(temperature[i,1]>=20)
+       dress_class[i,1] = 0
+     if(temperature[i,1] <=19 && temperature[i,1] >= 10)
+       dress_class[i,1] = 1
+     if(temperature[i,1] >=0 && temperature[i,1] <= 9)
+       dress_class[i,1] = 2
+     if(temperature[i,1] >=-10 && temperature[i,1] <= -1)
+       dress_class[i,1] = 3
+     if(temperature[i,1]<=-11)
+       dress_class[i,1] = 4
+   }
+
+   dress_class <- as.factor(dress_class$dress_class)
+   rand_data <- cbind(temperature,dress_class)
+   return(rand_data)
+
+}
+
+#random test data generation
+test_data_generation = function(k){
+
+   temperature <- data.frame(temp = floor(runif(k, min=-30, max=30)))
+   #corresponding label generation
+   dress_class <- data.frame(dress_class = rep(0,nrow(temperature)))
+
+   for(i in 1:nrow(temperature))
+   {
+     if(temperature[i,1]>=20)
+       dress_class[i,1] = 0
+     if(temperature[i,1] <=19 && temperature[i,1] >= 10)
+       dress_class[i,1] = 1
+     if(temperature[i,1] >=0 && temperature[i,1] <= 9)
+       dress_class[i,1] = 2
+     if(temperature[i,1] >=-10 && temperature[i,1] <= -1)
+       dress_class[i,1] = 3
+     if(temperature[i,1]<=-11)
+       dress_class[i,1] = 4
+   }
+
+   dress_class <- as.factor(dress_class$dress_class)
+   rand_data <- cbind(temperature,dress_class)
+   return(rand_data)
+
+}
