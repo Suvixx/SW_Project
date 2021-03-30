@@ -13,14 +13,21 @@ test_data <- data[-index,]
 
 #unit testing split function
 library(testthat)
-k <- 0.6
-j <- expect_that(index, equals(split(k,data)))
-k <- 0.7
-j <- expect_that(index, equals(split(k,data)))
-k <- 0.8
-j <- expect_that(index, equals(split(k,data)))
-k <- 0.2765
-j <- expect_that(index, equals(split(k,data)))
+#k <- 0.6
+#j <- expect_that(index, equals(split(k,data)))
+#k <- 0.7
+#j <- expect_that(index, equals(split(k,data)))
+#k <- 0.8
+#j <- expect_that(index, equals(split(k,data)))
+#k <- 0.2765
+#j <- expect_that(index, equals(split(k,data)))
+value <- c(0.6,0.7,0.8,0.2765)
+utsp = function(value){
+  for(i in 1:length(value)){
+    j <- expect_that(index, equals(split(value[i],data)))
+    print(j)
+  }
+}
 
 
 #factoring
