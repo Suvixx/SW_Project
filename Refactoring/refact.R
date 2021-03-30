@@ -41,7 +41,6 @@ FALSE, probability = FALSE)
    }
    else
      print("Not in the range")
-  #predt <- predict(svm_model_after_tune, Temp, decision.values = FALSE, probability = FALSE)
-  #cat(as.integer(predt[[1]]) - 1)
+  
 }
 if(interactive()) fun()
