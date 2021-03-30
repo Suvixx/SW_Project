@@ -22,9 +22,17 @@ pred_prob <- predict(svm_untuned, test_data$Temperature, decision.values
 = TRUE, probability = TRUE)
 
 #unit test to see whether the model is in "svm" class or not
-expect_that(svm_untuned, is_a("lm"))
-expect_that(svm_untuned, is_a("svm"))
+#expect_that(svm_untuned, is_a("lm"))
+#expect_that(svm_untuned, is_a("svm"))
 
+# Refactoring type: Replace commands with function (wrote a function for
+unit testing)
+utm <- function(model){
+    	type <- c("lm", "svm")
+	for(i in 1:length(type))
+             print(expect_that(model, is_a(type[I])))
+}
+utm(model = svm_untuned)
 
 library(caret)
 confusionMatrix(y_test, pred_prob)
