@@ -79,8 +79,8 @@ for(i in 1:nrow(temperature))
 
 dress_class <- as.factor(dress_class$dress_class)
 
-#test
-pred <- predict(svm_model_after_tune, temperature, decision.values =
+#integration test
+predicted_test_labels <- predict(svm_model_after_tune, temperature, decision.values =
 TRUE, probability = TRUE)
 library(caret)
 confusionMatrix(dress_class, pred)
