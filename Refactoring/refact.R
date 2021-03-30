@@ -83,4 +83,4 @@ dress_class <- as.factor(dress_class$dress_class)
 predicted_test_labels <- predict(svm_model_after_tune, temperature, decision.values =
 TRUE, probability = TRUE)
 library(caret)
-confusionMatrix(dress_class, pred)
+confusionMatrix(dress_class, predicted_test_labels)
