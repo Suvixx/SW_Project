@@ -24,3 +24,12 @@ pred_prob <- predict(svm_untuned, test_data$Temperature, decision.values
 
 library(caret)
 confusionMatrix(y_test, pred_prob)
+
+
+fun <- function() {
+  Temp <- readline("Enter a temperature: ")
+  Temp <- as.integer(Temp)
+  predt <- predict(svm_model_after_tune, Temp, decision.values = FALSE, probability = FALSE)
+  cat(as.integer(predt[[1]]) - 1)
+}
+if(interactive()) fun()
