@@ -17,8 +17,8 @@ y_test <- as.factor(test_data$Dress_Class)
 
 #multiclass SVM Classification
 library(e1071)
-svm_untuned <- svm(train_data$Temperature, y, probability = TRUE)
-pred_prob <- predict(svm_untuned, test_data$Temperature, decision.values
+svm_tuned <- svm(train_data$Temperature, y, probability = TRUE)
+pred_prob <- predict(svm_tuned, test_data$Temperature, decision.values
 = TRUE, probability = TRUE)
 
 #unit test to see whether the model is in "svm" class or not
