@@ -11,6 +11,18 @@ index <- split(0.8,data)
 train_data <- data[index,]
 test_data <- data[-index,]
 
+#unit testing split function
+library(testthat)
+k <- 0.6
+j <- expect_that(index, equals(split(k,data)))
+k <- 0.7
+j <- expect_that(index, equals(split(k,data)))
+k <- 0.8
+j <- expect_that(index, equals(split(k,data)))
+k <- 0.2765
+j <- expect_that(index, equals(split(k,data)))
+
+
 #factoring
 y <- as.factor(train_data$Dress_Class)
 y_test <- as.factor(test_data$Dress_Class)
