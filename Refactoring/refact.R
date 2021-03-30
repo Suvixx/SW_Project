@@ -17,13 +17,7 @@ y_test <- as.factor(test_data$Dress_Class)
 
 #multiclass SVM Classification
 library(e1071)
-#svm_untuned <- svm(train_data$Temperature, y, probability = TRUE)
-#pred_prob <- predict(svm_untuned, test_data$Temperature, decision.values
-#= TRUE, probability = TRUE)
-
-
 library(caret)
-#confusionMatrix(y_test, pred_prob)
 
 #tuning to see how the accuracy changing
 svm_tune <- tune(svm, train.x=train_data$Temperature, train.y=y, 
