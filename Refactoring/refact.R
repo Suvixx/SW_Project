@@ -15,9 +15,9 @@ test_data <- data[-index,]
 library(testthat)
 
 split_value <- c(0.6,0.7,0.8,0.2765)
-utsp = function(value){
-  for(i in 1:length(value)){
-    j <- expect_that(index, equals(split(value[i],data)))
+unit_test_split = function(split_value){
+  for(i in 1:length(split_value)){
+    j <- expect_that(index, equals(split(split_value[i],data)))
     print(j)
   }
 }
